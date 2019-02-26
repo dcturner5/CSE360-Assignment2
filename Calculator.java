@@ -3,12 +3,14 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * Constructor of calculator
 	 */
 	public Calculator () {
-		total = 0;  // not needed - included for clarity
+		total = 0;
+		history = "0";
 	}
 	
 	/**
@@ -20,31 +22,34 @@ public class Calculator {
 	}
 	
 	/**
-	 * add - adds value to total
+	 * add - adds value to total, updates history
 	 * @param value
 	 */
 	public void add (int value) {
 		total += value;
+		history += " + " + value;
 	}
 	
 	/**
-	 * subtract - subtracts value from total
+	 * subtract - subtracts value from total, updates history
 	 * @param value
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history += " - " + value;
 	}
 	
 	/**
-	 * multiply - multiplies total by value
+	 * multiply - multiplies total by value, updates history
 	 * @param value
 	 */
 	public void multiply (int value) {
 		total *= value;
+		history += " * " + value;
 	}
 	
 	/**
-	 * divide - divides total by value
+	 * divide - divides total by value, updates history
 	 * @param value
 	 */
 	public void divide (int value) {
@@ -54,6 +59,7 @@ public class Calculator {
 		else {
 			total /= value;
 		}
+		history += " / " + value;
 	}
 	
 	/**
@@ -61,7 +67,7 @@ public class Calculator {
 	 * @return
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 	
 }
